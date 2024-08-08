@@ -1,8 +1,10 @@
 import { useState } from "react";
 import accordionData from "../../assets/accodionData";
 import "./accordion.css";
+import { useTheme } from "../contexts/ThemeContext";
 
 export default function Accordion() {
+  const { theme } = useTheme();
   const [selectedQues, setSelectedQues] = useState(null);
 
   function handleSelectQues(id) {
@@ -10,7 +12,7 @@ export default function Accordion() {
   }
 
   return (
-    <ul className="accodion-container">
+    <ul className={`accodion-container ${theme}`}>
       {accordionData.map((question) => (
         <Question
           question={question}
