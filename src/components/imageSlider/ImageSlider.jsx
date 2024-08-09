@@ -16,7 +16,7 @@ export default function ImageSlider({ BASE_URL }) {
           const data = await res.json();
 
           if (res.ok) {
-            console.log(data);
+            // console.log(data);
             setImages(data);
           }
         } catch (e) {
