@@ -1,13 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart, updateQuantity } from "../store";
+import { useTheme } from "../contexts/ThemeContext";
 
 function ShoppingCart() {
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => state);
   console.log(cart);
-
+  const { theme } = useTheme();
   return (
-    <div>
+    <div className={`${theme}`}>
       <h1>Cart</h1>
       {cart.map((item) => (
         <div key={item.id}>
